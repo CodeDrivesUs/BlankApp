@@ -1,0 +1,112 @@
+
+    
+    .carousel-item {
+      height: 280px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .carousel-cell {
+        width: 50%;
+        height: 200px;
+        margin-right: 10px;
+        background: #8C8;
+        border-radius: 5px;
+        counter-increment: gallery-cell;
+      }
+      
+      /* cell number */
+      .carousel-cell:before {
+        display: block;
+        text-align: center;
+        content: counter(gallery-cell);
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+      }
+      
+    body{
+      background-color: black;
+    }
+    .single-property {
+        background-color: white;
+        padding: 20px;      
+        &:hover {
+            background: #ffffff;
+            box-shadow: 0 8px 28px rgba(221, 221, 221, 0.72);
+            img {
+                transform: scale(1.09);
+            }
+        }
+    }
+    
+    .images {
+        background: rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+        img {
+           
+            width: 100%;
+            opacity: .5;
+            height: 260px;
+        }
+        span {
+            background: lightblue;
+            color: #fff;
+            padding: 5px 25px;
+            margin-top: -60px;
+            position: absolute;
+            margin-left: 22px;
+        }
+    }
+    
+    .desc {
+        .top {
+            padding: 25px 0;
+            a {
+                color: #222;
+            }
+        }
+        .middle {
+            padding-bottom: 5px;
+            p {
+                width: 33%;
+                @media(max-width: 1024px) and (min-width:992px) {
+                    font-size: 11px;
+                }
+            }
+            .gr {
+                color: #1fe111;
+            }
+            .rd {
+                color: #f40f68;
+            }
+        }
+        .bottom {
+            border-top: 1px solid rgba(204, 204, 204, 0.39);
+            padding-top: 15px;
+            p {
+                width: 40%;
+                margin-bottom: 0px;
+                @media ( max-width:380px) {
+                    font-size: 11px;
+                }
+                span {
+                    margin-right: 5px;
+                }
+            }
+        }
+        @media(max-width:1280px) and (min-width: 988px) {
+            .desc .middle p {
+                font-size: 10px;
+            }
+        }
+    }
+    
+    @media(max-width:414px) {
+        .desc .middle p {
+            font-size: 10px;
+        }
+    }
+    

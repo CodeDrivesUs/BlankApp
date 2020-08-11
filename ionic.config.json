@@ -1,0 +1,8 @@
+{
+  "name": "BlankApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
