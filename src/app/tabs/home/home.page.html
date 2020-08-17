@@ -39,7 +39,7 @@
     <div class="carousel-cell"></div>
    
   </div>
-  <div class="single-property" *ngFor="let data of stores" (click)="store('data')">
+  <div class="single-property" *ngFor="let data of stores" (click)="store(data)">
     <div class="images">
       <img class="img-fluid mx-auto d-block" src="{{data.Image}}" alt="">
       <span></span>
@@ -65,5 +65,5 @@
     </div>
   </div>
  
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
 </ion-content>

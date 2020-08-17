@@ -1,9 +1,621 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Store</ion-title>
-  </ion-toolbar>
+<ion-header class="MyHeader" >
+ <ion-toolbar>
+   <ion-buttons>
+    <ion-back-button class="btn" slot="start"></ion-back-button>
+   </ion-buttons>
+ </ion-toolbar>
 </ion-header>
+<ion-header class="header2" #header >
+  <ion-segment [(ngModel)]="page">
+    <ion-segment-button value="0" (click)="selectedtab(0)">
+     Building
+    </ion-segment-button>
+    <ion-segment-button value="1"  (click)="selectedtab(1)">
+      Doors
+     </ion-segment-button>
+     
+     <ion-segment-button value="2" (click)="selectedtab(2)">
+      Frames
+     </ion-segment-button>
+     <ion-segment-button value="3" (click)="selectedtab(3)">
+      buffering
+     </ion-segment-button>
+   
+  </ion-segment>
+ </ion-header>
+ 
+<ion-content [scrollEvents]="true" (ionScroll)="logscrolling($event)"  (ionStartScroll)="scrollstart(header)">
+ <ion-card class="StoreHeader" [ngStyle]="{'background-image':'url('+storeData.Image+')'}">
+ </ion-card>
+ <h3>{{storeData.Name}}</h3>
+ <ion-list>
+  <ion-header>
+    <h2>Cement</h2>
+  </ion-header>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (2).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>PPC Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 95,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (3).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Build Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 90,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (4).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Builders</h3>
+               
+          <p>50 Kg Cement perfect for Building blocks </p>
+          <small class="text-muted">R 105,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (5).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>OBCZ Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 75,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-header>
+    <h2>Sand</h2>
+  </ion-header>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (6).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>plastel sand</h3>
+               
+          <p>zweli nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (7).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Crafting Sand</h3>
+               
+          <p> Taken from mpumalanga derset </p>
+          <small class="text-muted">R 800,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (8).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Derset sand</h3>
+               
+          <p>Maxwell nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (10).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Forest sand</h3>
+               
+          <p> forest sand from namibia </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (9).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>plastel sand</h3>
+               
+          <p>zweli nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+</ion-list>
+<ion-list>
+  <ion-header>
+    <h2>Cement</h2>
+  </ion-header>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (2).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>PPC Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 95,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (3).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Build Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 90,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (4).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Builders</h3>
+               
+          <p>50 Kg Cement perfect for Building blocks </p>
+          <small class="text-muted">R 105,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/cement/images (5).jpeg"   style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>OBCZ Cement</h3>
+               
+          <p>50 Kg Cement perfect for pavements </p>
+          <small class="text-muted">R 75,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-header>
+    <h2>Sand</h2>
+  </ion-header>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (6).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>plastel sand</h3>
+               
+          <p>zweli nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (7).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Crafting Sand</h3>
+               
+          <p> Taken from mpumalanga derset </p>
+          <small class="text-muted">R 800,99</small>
+      </div>
+  </div>
+  </ion-item>
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (8).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Derset sand</h3>
+               
+          <p>Maxwell nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (10).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>Forest sand</h3>
+               
+          <p> forest sand from namibia </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+  <ion-item [routerLink]="['/product-detail']">
+    <div class="media post_item">
+      <img src="assets/Imgs/Sand/images (9).jpeg"  style="width: 70px; height: 100px;" alt="post">
+      <div class="media-body">
+        
+              <h3>plastel sand</h3>
+               
+          <p>zweli nkuna plastel sand two loads </p>
+          <small class="text-muted">R 749,99</small>
+      </div>
+  </div>
+  </ion-item> 
+</ion-list>
 
-<ion-content>
+<ion-slides #slider (ionSlideWillChange)="movebuttones($events)" >
+  <ion-slide >
+    <ion-list>
+      <ion-header>
+        <h2>Cement</h2>
+      </ion-header>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/cement/images (2).jpeg"   style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>PPC Cement</h3>
+                   
+              <p>50 Kg Cement perfect for pavements </p>
+              <small class="text-muted">R 95,99</small>
+          </div>
+      </div>
+      </ion-item>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/cement/images (3).jpeg"   style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>Build Cement</h3>
+                   
+              <p>50 Kg Cement perfect for pavements </p>
+              <small class="text-muted">R 90,99</small>
+          </div>
+      </div>
+      </ion-item>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/cement/images (4).jpeg"   style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>Builders</h3>
+                   
+              <p>50 Kg Cement perfect for Building blocks </p>
+              <small class="text-muted">R 105,99</small>
+          </div>
+      </div>
+      </ion-item>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/cement/images (5).jpeg"   style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>OBCZ Cement</h3>
+                   
+              <p>50 Kg Cement perfect for pavements </p>
+              <small class="text-muted">R 75,99</small>
+          </div>
+      </div>
+      </ion-item>
+      <ion-header>
+        <h2>Sand</h2>
+      </ion-header>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (6).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>plastel sand</h3>
+                   
+              <p>zweli nkuna plastel sand two loads </p>
+              <small class="text-muted">R 749,99</small>
+          </div>
+      </div>
+      </ion-item> 
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (7).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>Crafting Sand</h3>
+                   
+              <p> Taken from mpumalanga derset </p>
+              <small class="text-muted">R 800,99</small>
+          </div>
+      </div>
+      </ion-item>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (8).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>Derset sand</h3>
+                   
+              <p>Maxwell nkuna plastel sand two loads </p>
+              <small class="text-muted">R 749,99</small>
+          </div>
+      </div>
+      </ion-item> 
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (10).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>Forest sand</h3>
+                   
+              <p> forest sand from namibia </p>
+              <small class="text-muted">R 749,99</small>
+          </div>
+      </div>
+      </ion-item> 
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (9).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>plastel sand</h3>
+                   
+              <p>zweli nkuna plastel sand two loads </p>
+              <small class="text-muted">R 749,99</small>
+          </div>
+      </div>
+      </ion-item> 
+    </ion-list>
+  </ion-slide>
+  <ion-slide>
+    <ion-list>
+      <ion-header>
+        <h2>Main Door</h2>
+      </ion-header>
+      <ion-item [routerLink]="['/product-detail']">
+        <div class="media post_item">
+          <img src="assets/Imgs/Sand/images (6).jpeg"  style="width: 70px; height: 100px;" alt="post">
+          <div class="media-body">
+            
+                  <h3>plastel sand</h3>
+                   
+              <p>zweli nkuna plastel sand two loads </p>
+              <small class="text-muted">R 749,99</small>
+          </div>
+      </div>
+      </ion-item> 
+   
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/maindoor/images (22).jpeg" style="width:250px;height:250px;">
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+       
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/maindoor/images (23).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/maindoor/images (24).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+        <ion-header>
+          <h2>Garagedoor</h2>
+        </ion-header>
+        <ion-item [routerLink]="['/product-detail']">
+          <div class="media post_item">
+            <img src="assets/Imgs/Sand/images (6).jpeg"  style="width: 70px; height: 100px;" alt="post">
+            <div class="media-body">
+              
+                    <h3>plastel sand</h3>
+                     
+                <p>zweli nkuna plastel sand two loads </p>
+                <small class="text-muted">R 749,99</small>
+            </div>
+        </div>
+        </ion-item> 
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Garagedoor/images (25).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Garagedoor/images (26).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Garagedoor/images (27).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+        <ion-item [routerLink]="['/cart']"> 
+          <ion-thumbnail slot="start">
+            <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Garagedoor/images (28).jpeg" style="width:250px;height:250px;">
+        
+          </ion-thumbnail>
+          <ion-label>    
+            <h6 class="mb-0">
+              <a class="text-dark" href="#">pave Brick</a>
+           </h6>
+           <div class="mb-1 text-muted small">R 1.56</div>
+          </ion-label>
+        
+        </ion-item>
+       
+    </ion-list>
+  </ion-slide>
+  <ion-slide>
+    <ion-content>
+      <ion-card>
+        <ion-card-header>
+        
+          <ion-card-title>Window Frames</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Window/images (16).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Window/images (17).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/Window/images (18).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+        
+          <ion-card-title>Door Frames</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/doorframe/images (19).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/doorframe/images (20).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+          <ion-item [routerLink]="['/cart']"> 
+            <ion-thumbnail slot="start">
+              <img  class="card-img-right flex-auto " alt="Thumbnail [200x250]" src="assets/Imgs/doorframe/images (21).jpeg" style="width:250px;height:250px;">
+          
+            </ion-thumbnail>
+            <ion-label>    
+              <h6 class="mb-0">
+                <a class="text-dark" href="#">pave Brick</a>
+             </h6>
+             <div class="mb-1 text-muted small">R 1.56</div>
+            </ion-label>
+          
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-slide>
+  <ion-slide>
+    <ion-list>
 
+    </ion-list>
+   
+  </ion-slide>
+</ion-slides>
 </ion-content>
+
+<!-- <super-tabs>
+<super-tab *ngfor="page of pages" [root]="page.pageName">{{ page.pageName}}</super-tab>
+</super-tabs> -->

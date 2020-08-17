@@ -23,7 +23,8 @@ console.log(this.stores);
   }) ;
   }
   store(storedata){
-    debugger
-    this.router.navigate(['store',{store:storedata}])
+    
+    
+    this.router.navigate(['store',{store:JSON.stringify(storedata)}])
   }
 }

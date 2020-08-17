@@ -1,0 +1,32 @@
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    border-style: none;    
+}
+.MyHeader{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    position: fixed;
+    border-style: none;
+}
+.header2{
+position: relative;
+}
+ion-back-button{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    border-style: none;
+    background-color: transparent;
+}
+.StoreHeader{
+    height: 280px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    margin-left: -3px;
+    margin-top: -3px;
+    margin-right:-1px ;
+}
