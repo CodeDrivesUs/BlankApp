@@ -29,7 +29,7 @@ export class AuthService {
     this.storage.get(TOKEN_KEY).then(token => {
       if (token) {
         let decoded = token;
-       // let isExpired = this.helper.isTokenExpired(token);
+       ///let isExpired = this.helper.isTokenExpired(token)
           this.user = decoded;
           this.authenticationState.next(true);
         } else {

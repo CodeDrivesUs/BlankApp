@@ -16,4 +16,11 @@ export class StoreService {
       })
     );
   }
+  getstoredetails(id:any) {
+    return this.http.get(`${this.url}/api/StoresApi/${id}`).pipe(
+    catchError(e => {      
+      throw new Error(e);
+    })
+  );
+}
 }

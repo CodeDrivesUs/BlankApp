@@ -15,7 +15,11 @@ const routes: Routes = [
        {
         path: 'cart',
         loadChildren: () => import('../../tabs/cart/cart.module').then( m => m.CartPageModule)
-      },    
+      }, 
+       {
+        path: 'Account',
+        loadChildren: () => import('../../tabs/account/account.module').then( m => m.AccountPageModule)
+      },   
       {
         path: '',
         redirectTo: '/inside/home',

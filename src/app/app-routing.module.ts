@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'store',
     loadChildren: () => import('./pages/store/store.module').then( m => m.StorePageModule)
   },
+  {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./tabs/account/account.module').then( m => m.AccountPageModule)
+  },
  
 ];
 
